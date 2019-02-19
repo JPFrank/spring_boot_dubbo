@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 全局配置 -->
+    <settings>
+        <!--允许 JDBC 支持自动生成主键-->
+        <setting name="useGeneratedKeys" value="false"/>
+        <!--是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典Java 属性名 aColumn 的类似映射。 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.chengan.syspermissionapi.domain"/>
+        <package name="com.chengan.syspermissionapi.query"/>
+    </typeAliases>
+    <typeHandlers>
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.ExecPartnerType"/>-->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.fund.FundManagementMode"/>-->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.fund.FundManagementType"/>-->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.fund.FundOrgType"/>-->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.fund.FundShareType"/>-->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.fund.FundStatus"/>-->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.Gender"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.UserStatus"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.chengan.syspermissionapi.vo.PermissionAction"/>
+        <typeHandler handler="com.chengan.syspermissionapi.utils.MybatisLocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>
+    </typeHandlers>
+    <mappers>
+        <!--<mapper resource="com/chengan/syspermissionservice/mapper/FundMapper.xml"/>-->
+        <!--<mapper resource="com/chengan/syspermissionservice/mapper/DepartmentMapper.xml"/>-->
+        <mapper resource="com/chengan/syspermissionservice/mapper/RoleMapper.xml"/>
+        <mapper resource="com/chengan/syspermissionservice/mapper/UserMapper.xml"/>
+        <mapper resource="com/chengan/syspermissionservice/mapper/PermissionMapper.xml"/>
+        <mapper resource="com/chengan/syspermissionservice/mapper/UserRoleMapper.xml"/>
+        <mapper resource="com/chengan/syspermissionservice/mapper/RolePermissionMapper.xml"/>
+        <!--<mapper resource="com/chengan/syspermissionservice/mapper/EntityRoleMapper.xml"/>-->
+        <mapper resource="com/chengan/syspermissionservice/mapper/MoudleMapper.xml"/>
+    </mappers>
+</configuration>
